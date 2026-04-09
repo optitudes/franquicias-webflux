@@ -38,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Mono<Product> findByUuid(String branchUuid, String productUuid) {
         return productRepository.findByUuid(branchUuid, productUuid)
-                .switchIfEmpty(Mono.error(new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Product not found")));
+                .switchIfEmpty(Mono.error(new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Producto no encontrado")));
     }
 
     @Override

@@ -25,7 +25,7 @@ public class BranchServiceImpl implements BranchService {
     @Override
     public Mono<Branch> create(String franchiseUuid, BranchRequest request) {
         return franchiseRepository.findByUuid(franchiseUuid)
-                .switchIfEmpty(Mono.error(new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Franchise not found")))
+                .switchIfEmpty(Mono.error(new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Franquicia no encontrada")))
                 .flatMap(franchise -> {
                     Branch branch = Branch.builder()
                             .uuid(UUID.randomUUID().toString())
@@ -44,7 +44,7 @@ public class BranchServiceImpl implements BranchService {
     @Override
     public Mono<Branch> findByUuid(String franchiseUuid, String branchUuid) {
         return branchRepository.findByUuid(franchiseUuid, branchUuid)
-                .switchIfEmpty(Mono.error(new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Branch not found")));
+                .switchIfEmpty(Mono.error(new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Sucursal no encontrada")));
     }
 
     @Override
