@@ -1,4 +1,4 @@
-package com.franchise.pt.domain.repository;
+package com.franchise.pt.application.repository;
 
 import com.franchise.pt.domain.model.Franchise;
 import reactor.core.publisher.Flux;
