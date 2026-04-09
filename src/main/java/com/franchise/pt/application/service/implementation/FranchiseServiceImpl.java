@@ -2,8 +2,8 @@ package com.franchise.pt.application.service.implementation;
 
 import com.franchise.pt.application.service.interfaces.FranchiseService;
 import com.franchise.pt.domain.model.Franchise;
-import com.franchise.pt.domain.repository.FranchiseRepository;
-import com.franchise.pt.infrastructure.adapter.in.web.dto.FranchiseRequest;
+import com.franchise.pt.application.repository.FranchiseRepository;
+import com.franchise.pt.infrastructure.inbound.api.dto.FranchiseRequest;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

@@ -1,7 +1,7 @@
 package com.franchise.pt.application.service.interfaces;
 
 import com.franchise.pt.domain.model.Franchise;
-import com.franchise.pt.infrastructure.adapter.in.web.dto.FranchiseRequest;
+import com.franchise.pt.infrastructure.inbound.api.dto.FranchiseRequest;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
