@@ -67,7 +67,7 @@ infraestructure/
 Esta arquitectura permite que el **dominio y los casos de uso** permanezcan independientes de las tecnologías externas, facilitando cambios, pruebas unitarias y escalabilidad futura.
 
 ## Notas del desarrollador
- - Si bien se me asignaron dos días para resolver el reto técnico realmente pude usar muy poco tiempo debido a mi jornada laboral cómo desarrollador semi senior y las clases de la universidad que estoy viendo en la noche entre otros factores, sin embargo fue muy entretenido para mí realizar esta prueba, muchas gracias
+ - Si bien se me asignaron dos días para resolver el reto técnico realmente pude usar muy poco tiempo debido a mi jornada laboral de 7:30am a 6pm presencial y las clases de la universidad que estoy viendo en la noche entre otros factores, sin embargo fue muy entretenido para mí realizar esta prueba, muchas gracias
  - Por temas de tiempo tuve que omitir las pruebas unitarias y el usar terraform para el despliegue
 
 
