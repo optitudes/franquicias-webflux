@@ -16,6 +16,7 @@ public class ProductMapper {
                 .productUuid(product.getUuid())
                 .branchUuid(product.getBranchUuid())
                 .name(product.getName())
+                .stock(product.getStock() != null ? product.getStock() : 0)
                 .build();
     }
 
@@ -24,6 +25,7 @@ public class ProductMapper {
         return Product.builder()
                 .uuid(entity.getProductUuid())
                 .name(entity.getName())
+                .stock(entity.getStock() != null ? entity.getStock() : 0)
                 .branchUuid(entity.getBranchUuid())
                 .build();
     }

@@ -1,4 +1,4 @@
-package com.franchise.pt.domain.model;
+package com.franchise.pt.infrastructure.inbound.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
-    private String uuid;
+public class BranchMaxStockResponse {
+    private String productUuid;
     private String name;
     private Integer stock;
     private String branchUuid;
+    private String branchName;
 }

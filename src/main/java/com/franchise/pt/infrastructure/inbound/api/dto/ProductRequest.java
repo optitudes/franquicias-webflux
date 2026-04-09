@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class ProductRequest {
-    @NotBlank(message = "Product name is required")
+    @NotBlank(message = "El nombre del producto es requerido")
     private String name;
+    private Integer stock;
 }

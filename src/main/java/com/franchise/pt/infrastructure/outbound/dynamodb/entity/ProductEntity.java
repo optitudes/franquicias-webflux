@@ -17,6 +17,7 @@ public class ProductEntity {
     private String uuid; // Partition Key (BRANCH#<uuid>)
     private String sk;   // Sort Key (PRODUCT#<uuid>)
     private String name;
+    private Integer stock;
     private String productUuid;
     private String branchUuid;
 

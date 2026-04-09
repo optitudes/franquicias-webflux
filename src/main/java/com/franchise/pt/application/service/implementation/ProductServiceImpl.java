@@ -25,6 +25,7 @@ public class ProductServiceImpl implements ProductService {
                 .uuid(UUID.randomUUID().toString())
                 .branchUuid(branchUuid)
                 .name(request.getName())
+                .stock(request.getStock() != null ? request.getStock() : 0)
                 .build();
         return productRepository.save(product);
     }
@@ -45,6 +46,9 @@ public class ProductServiceImpl implements ProductService {
         return findByUuid(branchUuid, productUuid)
                 .map(existing -> {
                     existing.setName(request.getName());
+                    if (request.getStock() != null) {
+                        existing.setStock(request.getStock());
+                    }
                     return existing;
                 })
                 .flatMap(productRepository::save);

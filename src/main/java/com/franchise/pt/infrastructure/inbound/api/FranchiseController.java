@@ -2,6 +2,8 @@ package com.franchise.pt.infrastructure.inbound.api;
 
 import com.franchise.pt.application.service.interfaces.FranchiseService;
 import com.franchise.pt.domain.model.Franchise;
+import com.franchise.pt.domain.model.Product;
+import com.franchise.pt.infrastructure.inbound.api.dto.BranchMaxStockResponse;
 import com.franchise.pt.infrastructure.inbound.api.dto.FranchiseRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -44,5 +46,10 @@ public class FranchiseController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Mono<Void> delete(@PathVariable String uuid) {
         return franchiseService.delete(uuid);
+    }
+
+    @GetMapping("/{uuid}/branches/products/max-stock")
+    public Flux<BranchMaxStockResponse> getMaxStockProductsPerBranch(@PathVariable String uuid) {
+        return franchiseService.findMaxStockProductsPerBranch(uuid);
     }
 }
