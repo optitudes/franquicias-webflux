@@ -1,0 +1,40 @@
+services:
+  app-local:
+    build: .
+    container_name: franchise-app-local
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      AWS_DYNAMODB_ENDPOINT: ${AWS_DYNAMODB_ENDPOINT}
+    depends_on:
+      dynamodb-local:
+        condition: service_healthy
+    profiles:
+      - local
+
+  app-prod:
+    build: .
+    container_name: franchise-app
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    profiles:
+      - prod
+
+  dynamodb-local:
+      image: amazon/dynamodb-local:latest
+      container_name: dynamodb-local
+      ports:
+        - "8000:8000"
+      command: ["-jar", "DynamoDBLocal.jar", "-sharedDb", "-inMemory"]
+      healthcheck:
+        test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8000 && echo -e 'GET / HTTP/1.0\r\n\r\n' >&3 && cat <&3 | grep -q 'HTTP'"]
+        interval: 5s
+        timeout: 5s
+        retries: 10
+        start_period: 10s
+      profiles:
+        - local
